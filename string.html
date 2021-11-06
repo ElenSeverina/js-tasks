@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // * вернуть строку, где все слова из исходной строки будут начинаться с заглавных букв
+
+        // function capitalizeWords (srcStr) { 
+        //     let strNew = "";
+        //     let result = srcStr.split(" ");
+
+        //     for (let i = 0; i < result.length; i++) {
+        //         result[i] = result[i].charAt(0).toUpperCase() + result[i].slice(1);
+        //         strNew += result[i];
+        //     }
+        //     return result.join(" ")
+        // }
+
+        // console.log ( capitalizeWords('welcome to the jungle') );
+
+
+    //     * на вход подается строка со словами разделенными пробелами
+    // * вернуть строку в camelCase
+    // * 'just a string' => 'justAString'
+    // */
+
+        // function toCamelCase(srcStr) { 
+        //     let strNew = "";
+        //     let result = srcStr.split(" ");
+
+        //     for (let i = 0; i < result.length; i++) {
+        //         result[i] = result[i].charAt(0).toUpperCase() + result[i].slice(1);
+        //         strNew += result[i];
+        //     }
+        //     return result.join("")
+        // }
+
+        // console.log ( toCamelCase('welcome to the jungle') );
+
+
+    //     * на вход подается строка в camelCase
+    // * вернуть строку в snake_case
+    // * 'camelCaseString' => 'camel_case_string'
+    // */
+        function camelToSnake(srcStr) { 
+
+            let strNew = "";
+            let result = srcStr.split(/(['A-Z'])/);
+
+            // for (let i = 0; i < result.length; i++) {
+            //     result[i] = result[i].charAt(0).toLowerCase() + result[i].slice(1);
+            //     strNew += result[i];
+            // }
+
+            return result.join("_")
+        }
+
+        console.log ( camelToSnake('welcomeToTheJungle') );
+
+
+
+    </script>
+</body>
+</html>
