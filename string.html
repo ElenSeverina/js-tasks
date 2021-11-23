@@ -40,14 +40,19 @@
         console.log ( toCamelCase('welcome to the jungle') );
 
 
-        function camelToSnake(srcStr) { 
-            let strNew = "";
-            let result = srcStr.split(/(?=[A-Z])/);
+        function camelToSnake(srcStr) {
+            let result = srcStr.split(/([A-Z])/);
 
-            return result.join("_").toLowerCase();
+            for (let i = 0; i < result.length; i++) {
+                if ( result[i] === result[i].toUpperCase() ) {
+                    result[i] = "_" + result[i];
+                }
+            }
+            return result.join("").toLowerCase();
         }
 
         console.log ( camelToSnake('welcomeToTheJungle') );
+
 
 
         function printInFrame(srcString, ch) {
@@ -118,33 +123,23 @@
 
 
         function reverseNumber (num) {
-            let str = ( Math.abs(num) ).toString();
-            let splStr = str.split('').reverse();
+            let splStr = num.toString().split('').reverse();
 
-                if (num >= 0) {
-                    splStr = splStr.join('')
+                if (num < 0) {
+                    splStr.pop();
+                    splStr.unshift("-");
                 }
-                else {
-                    splStr = -( splStr.join('') );
-                }
-                return splStr;
+                return splStr.join('');
             }
 
-        console.log ( reverseNumber (-145) );
+        console.log ( reverseNumber (145) );
 
 
-        function charCount (str, el) {
-            let count = 0;
-            var pos = str.indexOf(el);
-
-            while (pos >= 0) {
-                count++;
-                pos = str.indexOf(el, pos + 1);
-            }
-            return count;
+        function charCount (str) {
+            
         }
 
-        console.log( charCount ("нужно посчитать кол-во каждого символа в строке", "н") );
+        console.log( charCount ("нужно посчитать кол-во каждого символа в строке") );
 
 
 
