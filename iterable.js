@@ -37,3 +37,40 @@ numbers[Symbol.iterator] = function () {
 for (let num of numbers) {
     console.log(num);
 }
+
+
+
+
+
+
+
+
+
+function createIterable (from, to) {
+
+    return {
+        next() {
+            if (from < to) {
+                return {
+                    done: false,
+                    value: from++
+                };
+            } else {
+                return {
+                    done: true
+                };
+            }
+        }
+    }
+}
+
+const numIterator = createIterable (1, 6);
+
+console.log (numIterator.next());
+console.log (numIterator.next());
+console.log (numIterator.next());
+console.log (numIterator.next());
+console.log (numIterator.next());
+console.log (numIterator.next());
+
+
