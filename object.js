@@ -35,31 +35,31 @@ console.log( obj );
 
 
 
-function deepCopy(obj) {
+// function deepCopy(obj) {
 
-    let key;
-    let cloneObj;
+//     let key;
+//     let cloneObj;
 
-    if (typeof obj !== "object" || obj === null) {
-        return obj;
-    }
+//     if (typeof obj !== "object" || obj === null) {
+//         return obj;
+//     }
     
-    if (Array.isArray(obj)) {
-        cloneObj = [];
-        for (key in obj) {
-            cloneObj[key] = deepCopy(obj[key]);
-        }
-    }
-    else {
-        cloneObj = {};
-        for (key in obj) {
-            cloneObj[key] = deepCopy(obj[key]);
-        }
-    }
-    return cloneObj;
-}
+//     if (Array.isArray(obj)) {
+//         cloneObj = [];
+//         for (key in obj) {
+//             cloneObj[key] = deepCopy(obj[key]);
+//         }
+//     }
+//     else {
+//         cloneObj = {};
+//         for (key in obj) {
+//             cloneObj[key] = deepCopy(obj[key]);
+//         }
+//     }
+//     return cloneObj;
+// }
 
-const cloneObj = deepCopy(obj);
+// const cloneObj = deepCopy(obj);
 
-console.log( cloneObj );
-console.log( obj );
+// console.log( cloneObj );
+// console.log( obj );
